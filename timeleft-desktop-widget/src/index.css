@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@keyframes flipNumber {
+  0% {
+    transform: perspective(350px) rotateX(0deg);
+    filter: brightness(1.2);
+  }
+  49% {
+    transform: perspective(350px) rotateX(-90deg);
+    filter: brightness(0.65);
+  }
+  50% {
+    transform: perspective(350px) rotateX(90deg);
+    filter: brightness(0.65);
+  }
+  100% {
+    transform: perspective(350px) rotateX(0deg);
+    filter: brightness(1);
+  }
+}
+
+.animate-flip-card {
+  display: inline-block;
+  animation: flipNumber 0.45s cubic-bezier(0.25, 1, 0.5, 1) both;
+  transform-origin: center;
+  backface-visibility: hidden;
+}
+
+.animate-flip-single {
+  animation: flipNumber 0.4s cubic-bezier(0.25, 1, 0.45, 1) both;
+  transform-origin: center;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+@keyframes fallRollOut {
+  0% {
+    transform: translateY(0%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%) scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes fallRollIn {
+  0% {
+    transform: translateY(-100%) scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-fall-out {
+  display: inline-block;
+  animation: fallRollOut 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fall-in {
+  display: inline-block;
+  animation: fallRollIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes colorCycle {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(180deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.animate-infinite-background {
+  animation: colorCycle 25s linear infinite;
+}
+
+@keyframes rainbowShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-infinite {
+  background-size: 300% 300%;
+  animation: rainbowShift 16s ease-in-out infinite;
+}
+
+

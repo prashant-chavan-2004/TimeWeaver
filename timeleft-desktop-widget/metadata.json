@@ -1,0 +1,6 @@
+{
+  "name": "PC Countdown Widget Application",
+  "description": "A PC-styled desktop interface lets you input custom dates/times and place interactive, resizable floating countdown widgets on your virtual screen.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
